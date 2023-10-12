@@ -1,3 +1,4 @@
+import { Edges, GradientTexture, GradientType, OrbitControls, Outlines, Stage } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 import { Mesh } from "three"
@@ -12,10 +13,24 @@ export default function MainScene() {
     }
   })
 
-  return <mesh ref={meshRef} >
-    <boxGeometry />
-    <meshStandardMaterial color={"red"} />
-  </mesh>
+  return <Stage
+    adjustCamera={true}
+  >
+    <mesh
+      ref={meshRef}
+      scale={0.8}
+    >
+      <boxGeometry />
+      <meshBasicMaterial>
+        <GradientTexture
+          stops={[0, 0.5, 1]}
+          colors={["black", "blue", "black"]}
+        />
+      </meshBasicMaterial>
+      <Edges />
+      <OrbitControls />
+    </mesh>
+  </Stage>
 
 
 }
