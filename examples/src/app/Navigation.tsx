@@ -8,11 +8,13 @@ export default function Navigation() {
     shadow rounded-sm
     "
   >
-    <ul>
+    <ol>
       <li><Link href={"/scenes/main"} >Main</Link></li>
       <li><Link href={"/scenes/basic"} >Basic</Link></li>
       <li><Link href={"/scenes/staging_and_camera_shake"} >Staging And Camera Shake</Link></li>
-    </ul>
+      <li><Link href={"/scenes/render_texture"} >Render Texture</Link></li>
+      <li><Link href={"/scenes/html_annotations"} >Html Annotations</Link></li>
+    </ol>
   </section>
 
 }
